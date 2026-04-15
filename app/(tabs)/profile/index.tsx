@@ -75,8 +75,12 @@ export default function ProfileScreen() {
           <View style={styles.avatar}>
             <User size={36} color={Colors.primary} />
           </View>
-          <Text style={styles.avatarName}>{profile?.name || 'Set up profile'}</Text>
-          <Text style={styles.avatarPhone}>{profile?.phone || 'Add your phone number'}</Text>
+          <Text style={styles.avatarName} numberOfLines={1}>
+            {profile?.name || 'Set up profile'}
+          </Text>
+          <Text style={styles.avatarPhone} numberOfLines={1}>
+            {profile?.phone || 'Add your phone number'}
+          </Text>
         </View>
 
         <View style={styles.statsRow}>
@@ -315,11 +319,15 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: 20,
     fontWeight: '700' as const,
+    textAlign: 'center',
+    maxWidth: '90%',
   },
   avatarPhone: {
     color: Colors.textMuted,
     fontSize: 14,
     marginTop: 4,
+    textAlign: 'center',
+    maxWidth: '90%',
   },
   statsRow: {
     flexDirection: 'row',
@@ -336,6 +344,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     gap: 4,
+    overflow: 'hidden',
   },
   statValue: {
     color: Colors.textPrimary,
@@ -345,6 +354,7 @@ const styles = StyleSheet.create({
   statLabel: {
     color: Colors.textMuted,
     fontSize: 11,
+    textAlign: 'center',
   },
   section: {
     marginBottom: 24,
@@ -400,6 +410,7 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: 15,
     fontWeight: '500' as const,
+    flexShrink: 1,
   },
   fieldInput: {
     color: Colors.textPrimary,
@@ -415,6 +426,7 @@ const styles = StyleSheet.create({
   },
   connectorPicker: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     gap: 8,
     marginTop: 4,
   },
@@ -489,6 +501,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     borderWidth: 1,
     borderColor: 'rgba(239, 68, 68, 0.2)',
+    overflow: 'hidden',
   },
   signOutText: {
     color: Colors.danger,

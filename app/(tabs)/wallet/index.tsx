@@ -535,6 +535,7 @@ const styles = StyleSheet.create({
     gap: 8,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   quickActionIcon: {
     width: 40,
@@ -547,6 +548,7 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     fontSize: 12,
     fontWeight: '600' as const,
+    textAlign: 'center',
   },
   section: {
     marginTop: 28,
@@ -580,6 +582,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   emptyIcon: {
     width: 56,
@@ -634,6 +637,7 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: 14,
     fontWeight: '500' as const,
+    flexShrink: 1,
   },
   txDate: {
     color: Colors.textMuted,
@@ -752,6 +756,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: Colors.border,
     gap: 12,
+    overflow: 'hidden',
   },
   methodIconWrap: {
     width: 44,

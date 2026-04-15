@@ -543,6 +543,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 14,
     marginBottom: 20,
+    paddingRight: 8,
   },
   stepIconWrap: {
     width: 48,
@@ -560,6 +561,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 13,
     marginTop: 2,
+    flexShrink: 1,
   },
   mapCard: {
     height: 200,
@@ -597,11 +599,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     marginBottom: 14,
+    overflow: 'hidden',
   },
   infoCardText: {
     color: Colors.textPrimary,
     fontSize: 15,
     fontWeight: '500' as const,
+    flex: 1,
+    flexShrink: 1,
   },
   batteryCard: {
     flexDirection: 'row',
@@ -612,6 +617,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   batteryLabel: {
     flex: 1,
@@ -646,6 +652,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   connectorCardSelected: {
     borderColor: Colors.primary,
@@ -670,6 +677,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 12,
     marginTop: 3,
+    flexShrink: 1,
   },
   selectedDot: {
     width: 22,
@@ -693,6 +701,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   packageCardSelected: {
     borderColor: Colors.primary,
@@ -718,6 +727,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 13,
     marginBottom: 12,
+    flexShrink: 1,
   },
   packageSpecs: {
     flexDirection: 'row',
@@ -777,6 +787,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   summaryRow: {
     flexDirection: 'row',
@@ -799,6 +810,7 @@ const styles = StyleSheet.create({
     fontWeight: '600' as const,
     maxWidth: '50%',
     textAlign: 'right' as const,
+    flexShrink: 1,
   },
   summaryDivider: {
     height: 1,
@@ -810,6 +822,7 @@ const styles = StyleSheet.create({
     padding: 18,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   priceCardTitle: {
     color: Colors.textPrimary,

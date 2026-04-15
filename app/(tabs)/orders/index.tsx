@@ -78,7 +78,9 @@ function OrderCard({ order }: { order: Order }) {
             {config.label}
           </Text>
         </View>
-        <Text style={styles.dateText}>{formattedDate}</Text>
+        <Text style={styles.dateText} numberOfLines={1}>
+          {formattedDate}
+        </Text>
       </View>
 
       <View style={styles.cardBody}>
@@ -90,7 +92,7 @@ function OrderCard({ order }: { order: Order }) {
         </View>
         <View style={styles.detailRow}>
           <Zap size={14} color={Colors.accent} />
-          <Text style={styles.detailText}>
+          <Text style={styles.detailText} numberOfLines={1}>
             {order.chargePackage === 'emergency'
               ? 'Emergency Top-Up'
               : 'Standard Top-Up'}{' '}
@@ -194,6 +196,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   cardHeader: {
     flexDirection: 'row',
@@ -209,10 +212,14 @@ const styles = StyleSheet.create({
   statusText: {
     fontSize: 12,
     fontWeight: '700' as const,
+    flexShrink: 1,
   },
   dateText: {
     color: Colors.textMuted,
     fontSize: 12,
+    marginLeft: 8,
+    flexShrink: 1,
+    textAlign: 'right',
   },
   cardBody: {
     gap: 8,
@@ -227,6 +234,7 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     fontSize: 13,
     flex: 1,
+    flexShrink: 1,
   },
   cardFooter: {
     flexDirection: 'row',
