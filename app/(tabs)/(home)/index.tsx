@@ -8,6 +8,7 @@ import {
   Platform,
   Animated,
   Dimensions,
+  Image,
 } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -26,6 +27,7 @@ import {
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { darkMapStyle } from '@/constants/mapStyle';
 import Colors from '@/constants/colors';
+import { GOOGLE_ANDROID_GEO_API_KEY, hasGoogleAndroidGeoApiKey } from '@/constants/env';
 import { useApp } from '@/providers/AppProvider';
 import { ADDIS_ABABA_CENTER, isNightTime, PRICING } from '@/mocks/data';
 
@@ -72,14 +74,26 @@ export default function HomeScreen() {
           />
         ) : (
           <View style={styles.webMapFallback}>
-            <View style={styles.webMapGrid}>
-              {Array.from({ length: 20 }).map((_, i) => (
-                <View key={i} style={styles.webMapLine} />
-              ))}
-            </View>
-            <View style={styles.webMapDot} />
-            <Text style={styles.webMapText}>Addis Ababa</Text>
-            <Text style={styles.webMapSubtext}>አዲስ አበባ</Text>
+            {hasGoogleAndroidGeoApiKey ? (
+              <Image
+                source={{
+                  uri: `https://maps.googleapis.com/maps/api/staticmap?center=${ADDIS_ABABA_CENTER.latitude},${ADDIS_ABABA_CENTER.longitude}&zoom=13&size=1200x700&scale=2&maptype=roadmap&markers=color:0x3B82F6|${ADDIS_ABABA_CENTER.latitude},${ADDIS_ABABA_CENTER.longitude}&key=${GOOGLE_ANDROID_GEO_API_KEY}`,
+                }}
+                style={styles.webStaticMap}
+                resizeMode="cover"
+              />
+            ) : (
+              <>
+                <View style={styles.webMapGrid}>
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <View key={i} style={styles.webMapLine} />
+                  ))}
+                </View>
+                <View style={styles.webMapDot} />
+                <Text style={styles.webMapText}>Addis Ababa</Text>
+                <Text style={styles.webMapSubtext}>አዲስ አበባ</Text>
+              </>
+            )}
           </View>
         )}
 
@@ -285,6 +299,10 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.25)',
     fontSize: 20,
     marginTop: 4,
+  },
+  webStaticMap: {
+    width: '100%',
+    height: '100%',
   },
   topBar: {
     position: 'absolute',

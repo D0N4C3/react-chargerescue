@@ -8,6 +8,7 @@ import {
   TextInput,
   Platform,
   Alert,
+  Image,
 } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -28,6 +29,7 @@ import {
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { darkMapStyle } from '@/constants/mapStyle';
 import Colors from '@/constants/colors';
+import { GOOGLE_ANDROID_GEO_API_KEY, hasGoogleAndroidGeoApiKey } from '@/constants/env';
 import StepIndicator from '@/components/StepIndicator';
 import { useApp } from '@/providers/AppProvider';
 import {
@@ -142,8 +144,20 @@ export default function BookingScreen() {
           </MapView>
         ) : (
           <View style={styles.webMiniMap}>
-            <MapPin size={32} color={Colors.primary} />
-            <Text style={styles.webMapLabel}>Map Preview</Text>
+            {hasGoogleAndroidGeoApiKey ? (
+              <Image
+                source={{
+                  uri: `https://maps.googleapis.com/maps/api/staticmap?center=${mapCoords.latitude},${mapCoords.longitude}&zoom=15&size=700x400&scale=2&maptype=roadmap&markers=color:0x3B82F6|${mapCoords.latitude},${mapCoords.longitude}&key=${GOOGLE_ANDROID_GEO_API_KEY}`,
+                }}
+                style={styles.webStaticMap}
+                resizeMode="cover"
+              />
+            ) : (
+              <>
+                <MapPin size={32} color={Colors.primary} />
+                <Text style={styles.webMapLabel}>Map Preview</Text>
+              </>
+            )}
           </View>
         )}
       </View>
@@ -568,6 +582,10 @@ const styles = StyleSheet.create({
   webMapLabel: {
     color: Colors.textMuted,
     fontSize: 13,
+  },
+  webStaticMap: {
+    width: '100%',
+    height: '100%',
   },
   infoCard: {
     flexDirection: 'row',
