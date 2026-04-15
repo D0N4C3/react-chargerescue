@@ -272,6 +272,7 @@ export default function TrackingScreen() {
                     isReached && styles.timelineLabelActive,
                     isCurrent && { fontWeight: '700' as const },
                   ]}
+                  numberOfLines={2}
                 >
                   {step.label}
                 </Text>
@@ -309,12 +310,14 @@ export default function TrackingScreen() {
         <View style={styles.detailCard}>
           <View style={styles.detailRow}>
             <MapPin size={16} color={Colors.primary} />
-            <Text style={styles.detailText}>{order.location.address}</Text>
+            <Text style={styles.detailText} numberOfLines={2}>
+              {order.location.address}
+            </Text>
           </View>
           <View style={styles.detailDivider} />
           <View style={styles.detailRow}>
             <Zap size={16} color={Colors.accent} />
-            <Text style={styles.detailText}>
+            <Text style={styles.detailText} numberOfLines={1}>
               {order.chargePackage === 'emergency'
                 ? 'Emergency Top-Up'
                 : 'Standard Top-Up'}{' '}
@@ -515,6 +518,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 12,
     paddingTop: 6,
+    flex: 1,
+    flexShrink: 1,
   },
   timelineLabelActive: {
     color: Colors.textPrimary,
@@ -526,6 +531,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   driverCardLabel: {
     color: Colors.textMuted,
@@ -551,6 +557,7 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: 17,
     fontWeight: '700' as const,
+    flexShrink: 1,
   },
   driverRatingRow: {
     flexDirection: 'row',
@@ -583,6 +590,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   detailRow: {
     flexDirection: 'row',
@@ -594,6 +602,7 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     fontSize: 14,
     flex: 1,
+    flexShrink: 1,
   },
   detailDivider: {
     height: 1,
@@ -613,6 +622,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     alignItems: 'center',
+    overflow: 'hidden',
   },
   ratingTitle: {
     color: Colors.textPrimary,

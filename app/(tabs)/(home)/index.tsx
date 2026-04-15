@@ -374,6 +374,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 12,
     gap: 12,
+    overflow: 'hidden',
   },
   requestIconWrap: {
     width: 52,
@@ -395,6 +396,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.75)',
     fontSize: 13,
     marginTop: 2,
+    flexShrink: 1,
   },
   activeOrderCard: {
     flexDirection: 'row',
@@ -406,6 +408,7 @@ const styles = StyleSheet.create({
     gap: 12,
     borderWidth: 1,
     borderColor: Colors.primary,
+    overflow: 'hidden',
   },
   activeOrderDot: {
     width: 10,
@@ -425,6 +428,7 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     fontSize: 13,
     marginTop: 2,
+    flexShrink: 1,
   },
   etaBadge: {
     flexDirection: 'row',
@@ -449,6 +453,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     marginBottom: 12,
+    overflow: 'hidden',
   },
   statItem: {
     flex: 1,
@@ -467,6 +472,7 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
     fontSize: 13,
     fontWeight: '700' as const,
+    flexShrink: 1,
   },
   statLabel: {
     color: Colors.textMuted,
@@ -495,6 +501,7 @@ const styles = StyleSheet.create({
   coverageText: {
     color: Colors.textSecondary,
     fontSize: 14,
+    flexShrink: 1,
   },
   nightBadge: {
     backgroundColor: Colors.warningBg,
@@ -502,6 +509,7 @@ const styles = StyleSheet.create({
     padding: 14,
     borderWidth: 1,
     borderColor: 'rgba(234, 179, 8, 0.25)',
+    overflow: 'hidden',
   },
   nightText: {
     color: Colors.warning,
@@ -520,6 +528,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   quickStatValue: {
     color: Colors.textPrimary,

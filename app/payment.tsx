@@ -396,6 +396,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     borderWidth: 1,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   breakdownTitle: {
     color: Colors.textPrimary,
@@ -412,6 +413,8 @@ const styles = StyleSheet.create({
   breakdownLabel: {
     color: Colors.textSecondary,
     fontSize: 14,
+    flexShrink: 1,
+    paddingRight: 12,
   },
   breakdownValue: {
     color: Colors.textPrimary,
@@ -453,6 +456,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: Colors.border,
     gap: 14,
+    overflow: 'hidden',
   },
   methodIcon: {
     width: 48,
@@ -473,6 +477,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 12,
     marginTop: 2,
+    flexShrink: 1,
   },
   radio: {
     width: 22,
@@ -498,6 +503,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     borderColor: 'rgba(234, 179, 8, 0.2)',
+    overflow: 'hidden',
   },
   cashNoticeText: {
     flex: 1,

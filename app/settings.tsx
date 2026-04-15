@@ -571,6 +571,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 12,
     marginTop: 2,
+    flexShrink: 1,
   },
   sectionBody: {
     padding: 16,
@@ -593,6 +594,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: Colors.border,
     gap: 12,
+    overflow: 'hidden',
   },
   optionIcon: {
     width: 40,
@@ -613,6 +615,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 11,
     marginTop: 2,
+    flexShrink: 1,
   },
   toggleRow: {
     flexDirection: 'row',
@@ -639,6 +642,7 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontSize: 11,
     marginTop: 2,
+    flexShrink: 1,
   },
   actionRow: {
     flexDirection: 'row',
@@ -664,6 +668,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1.5,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   mapStyleCardActive: {
     borderColor: Colors.primary,
@@ -707,6 +712,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1.5,
     borderColor: Colors.border,
+    overflow: 'hidden',
   },
   themeCardActive: {
     borderColor: Colors.primary,
